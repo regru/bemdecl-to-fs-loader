@@ -30,7 +30,7 @@ module.exports = function (content) {
     .then(function (files) {
       var source = files.map(function (file) {
         self.addDependency(file);
-        return 'require(' + loaderUtils.stringifyRequest(self, path.relative(self.context, file)) + ')';
+        return 'require(' + loaderUtils.stringifyRequest(self, file) + ')';
       })
       .join('\n');
 
